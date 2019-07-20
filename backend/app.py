@@ -28,3 +28,12 @@ def update_city(id):
     _ensure_city(id)
     acities.document(id).delete()
     return flask.jsonify({'success':True})
+  def_ensure_city(id):
+    try:
+      return acities.document(id).get()
+    except:
+      flask.abort(404)
+      
+      if __name__=='__main__':
+        app.run(host='127.0.0.1',port=8080, debug=True)
+        
