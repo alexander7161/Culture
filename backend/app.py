@@ -7,8 +7,8 @@ firebase_admin.initialize_app()
 acities = firestore.client().collection('acities')
 
 @app.route('/cities', methods=['POST'])
-def create_cities():
+def create_city():
   req = flask.request.json
-  cities = acities.document()
-  cities.set(req)
-  return flask.jsonify({'id': cities.id}), 201
+  city = acities.document()
+  city.set(req)
+  return flask.jsonify({'id': city.id}), 201
