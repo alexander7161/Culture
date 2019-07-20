@@ -4,6 +4,7 @@ import flask
 
 app=flask.Flask(_name_)
 firebase_admin.initialize_app()
-cities = firestore.client().collection('cities')
+acities = firestore.client().collection('acities')
 
-@app.route()
+@app.route('/cities', methods=['POST'])
+
